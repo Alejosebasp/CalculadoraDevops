@@ -52,13 +52,13 @@ public class CalculadoraUITest {
 
         // Ingresar los valores
         num1Input.sendKeys("5");
-        num2Input.sendKeys("3");
+        num2Input.sendKeys("5");
         operacion.sendKeys("Sumar");
         boton.click();
 
         // Esperar y verificar el resultado
         WebElement resultado = wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h2")));
-        Assertions.assertTrue(resultado.getText().contains("Resultado: 8"));
+        Assertions.assertTrue(resultado.getText().contains("Resultado: 25"));
     }
 
     @Test
@@ -70,14 +70,14 @@ public class CalculadoraUITest {
         WebElement boton = driver.findElement(By.cssSelector("button[type='submit']"));
 
         // Ingresar los valores
-        num1Input.sendKeys("5");
-        num2Input.sendKeys("3");
+        num1Input.sendKeys("20");
+        num2Input.sendKeys("12");
         operacion.sendKeys("Restar");
         boton.click();
 
         // Esperar y verificar el resultado
         WebElement resultado = wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h2")));
-        Assertions.assertTrue(resultado.getText().contains("Resultado: 2"));
+        Assertions.assertTrue(resultado.getText().contains("Resultado: 8"));
     }
 
     @Test
@@ -96,7 +96,7 @@ public class CalculadoraUITest {
 
         // Esperar y verificar el resultado
         WebElement resultado = wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h2")));
-        Assertions.assertTrue(resultado.getText().contains("Resultado: 9"));
+        Assertions.assertTrue(resultado.getText().contains("Resultado: 10"));
     }
 }
 
