@@ -90,13 +90,13 @@ public class CalculadoraUITest {
 
         // Ingresar los valores
         num1Input.sendKeys("5");
-        num2Input.sendKeys("3");
+        num2Input.sendKeys("2");
         operacion.sendKeys("Multiplicar");
         boton.click();
 
         // Esperar y verificar el resultado
         WebElement resultado = wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h2")));
-        Assertions.assertTrue(resultado.getText().contains("Resultado: 15"));
+        Assertions.assertTrue(resultado.getText().contains("Resultado: 10"));
     }
 }
 
