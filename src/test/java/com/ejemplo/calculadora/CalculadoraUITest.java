@@ -51,14 +51,14 @@ public class CalculadoraUITest {
         WebElement boton = driver.findElement(By.cssSelector("button[type='submit']"));
 
         // Ingresar los valores
-        num1Input.sendKeys("5");
+        num1Input.sendKeys("10");
         num2Input.sendKeys("5");
         operacion.sendKeys("Sumar");
         boton.click();
 
         // Esperar y verificar el resultado
         WebElement resultado = wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h2")));
-        Assertions.assertTrue(resultado.getText().contains("Resultado: 25"));
+        Assertions.assertTrue(resultado.getText().contains("Resultado: 15"));
     }
 
     @Test
